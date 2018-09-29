@@ -1,0 +1,15 @@
+{% block app_content %}
+
+<body>
+    <h1>Random Post time!</h1>
+<br>
+    <h1>{{ post.name }}</h1>
+    <h2>Diplomats who've held this post:</h2>
+    <ul>
+        {% for diplomat in post.diplomats %}
+            <li>{{ diplomat.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+{% endblock %}

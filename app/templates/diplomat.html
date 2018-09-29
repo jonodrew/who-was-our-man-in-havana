@@ -1,0 +1,19 @@
+{% extends "_base.html" %}
+
+{% block app_content %}
+
+<body>
+    <h1>Random Diplomat time!</h1>
+<br>
+    <h1>{{ diplomat.name }}</h1>
+    <h2>Born: {{ diplomat.birth_year }}</h2>
+    <h2>Posts I've held:</h2>
+    <ul>
+        {% for post in diplomat.posts %}
+            <li>{{ post.role }} in {{ post.country.name }}</li>
+        {% endfor %}
+    </ul>
+<br>
+<form method='post' action='/diplomat'><button type='submit'>Spin again!</button></form>
+</body>
+{% endblock %}
